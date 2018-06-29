@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Login Seguro</title>
+    </head>
+    <body>
+        <div th:if="${param.error}">
+           <h1>Usuário ou senha inválidos!!</h1>
+        </div>
+        <div th:if="${param.logout}">
+            <h1>Você desconectou do Sistema.</h1>
+        </div>
+        <hr th:widht="280" />
+        <form th:action="@{/login}" method="post">
+            <div><label>Usuário   :&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username" /></label></div>
+            <div><label>Password  : <input type="password" name="password"/></label></div>
+            <div><input type="submit" value="Entrar"/></div>
+        </form>
+        <hr th:widht="280" />
+    </body>
+</html>
